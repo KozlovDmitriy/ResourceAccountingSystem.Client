@@ -20,6 +20,20 @@
     <Content Remove="ClientApp\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp\components\HousesGrid.tsx" />
+    <None Remove="ClientApp\components\ReadingInput.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\components\AddMeterDialog.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\AddEditDialog.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\HousesGrid.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\ReadingInput.tsx" />
+    <TypeScriptCompile Include="ClientApp\store\Houses.ts" />
+    <TypeScriptCompile Include="tslint.json" />
+  </ItemGroup>
+
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

@@ -7,6 +7,7 @@ import { createMemoryHistory } from 'history';
 import { createServerRenderer, RenderResult } from 'aspnet-prerendering';
 import { routes } from './routes';
 import configureStore from './configureStore';
+import { AppContainer } from 'react-hot-loader';
 
 export default createServerRenderer(params => {
     return new Promise<RenderResult>((resolve, reject) => {
@@ -21,8 +22,8 @@ export default createServerRenderer(params => {
         // cause any async tasks (e.g., data access) to begin
         const routerContext: any = {};
         const app = (
-            <Provider store={ store }>
-                <StaticRouter basename={ basename } context={ routerContext } location={ params.location.path } children={ routes } />
+            <Provider store={store}>
+                <StaticRouter basename={basename} context={routerContext} location={params.location.path} children={routes} />
             </Provider>
         );
         renderToString(app);

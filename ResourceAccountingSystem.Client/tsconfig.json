@@ -8,9 +8,15 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "skipDefaultLibCheck": true,
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "strictNullChecks": false,
+    "strictFunctionTypes": false,
     "strict": true,
-    "lib": ["es6", "dom"],
-    "types": ["webpack-env"]
+    "lib": [ "es6", "dom" ],
+    "types": [ "webpack-env" ]
   },
   "exclude": [
       "bin",

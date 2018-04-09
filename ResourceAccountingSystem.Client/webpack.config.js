@@ -39,6 +39,11 @@ module.exports = (env) => {
             new webpack.DllReferencePlugin({
                 context: __dirname,
                 manifest: require('./wwwroot/dist/vendor-manifest.json')
+            }),
+            new webpack.DefinePlugin({
+                'process.env': {
+                    'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+                }
             })
         ].concat(isDevBuild ? [
             // Plugins that apply in development builds only

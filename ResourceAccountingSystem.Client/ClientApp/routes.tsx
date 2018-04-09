@@ -1,12 +1,10 @@
 import * as React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import Home from './components/Home';
-import FetchData from './components/FetchData';
-import Counter from './components/Counter';
+import HousesGrid from './components/HousesGrid';
 
 export const routes = <Layout>
-    <Route exact path='/' component={ Home } />
-    <Route path='/counter' component={ Counter } />
-    <Route path='/fetchdata/:startDateIndex?' component={ FetchData } />
+    <Route exact path="/" render={() => (<Redirect to="/houses/1" />)} />
+    <Route path='/houses/:page?' component={HousesGrid} />
 </Layout>;
